@@ -1,0 +1,116 @@
+* {
+  color: #0074eced;
+  font-family: sans-serif;
+}
+
+#card-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 31%);
+  gap: 30px;
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.popup-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-content {
+  width: 75%;
+  height: 500px;
+  background-color: white;
+  transform: scale(0.25);
+  opacity: 0;
+  transition: all 0.5s 0.3s;
+  display: flex;
+}
+
+.popup-content-full-size {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.content-right h3 {
+  font-size: 48px;
+}
+
+.content-right p {
+  font-size: 24px;
+}
+
+#close-popup {
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.card {
+  position: relative;
+  height: 400px;
+  perspective: 1500px;
+}
+
+.card-back,
+.card-front {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.8s;
+  backface-visibility: hidden;
+  width: 100%;
+  border: 3px solid #0074eced;
+  flex-direction: column;
+  font-size: 40px;
+}
+
+.card-back,
+.card-front {
+  position: absolute;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  background-color: #0074eced;
+  color: white;
+}
+
+.card-front img {
+  width: 150px;
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.details-btn {
+  background-color: white;
+  border: 1px solid #0074eced;
+  font-size: 20px;
+  padding: 7px 5%;
+  border-radius: 20px;
+}
